@@ -1,4 +1,4 @@
 GAI_Extentions
-==============
++==============+
 
-google analytics for ios extentions
+google analytics for ios extention
