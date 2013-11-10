@@ -17,18 +17,9 @@ Pod::Spec.new do |s|
 
   s.name         = "GAI_Extentions"
   s.version      = "0.0.1"
-  s.summary      = "A short description of GAI_Extentions."
+  s.summary      = "google analytics for ios extention."
 
-  s.description  = <<-DESC
-                   A longer description of GAI_Extentions in Markdown format.
-
-                   * Think: Why did you write this? What is the focus? What does it do?
-                   * CocoaPods will be using this to generate tags, and improve search results.
-                   * Try to keep it short, snappy and to the point.
-                   * Finally, don't worry about the indent, CocoaPods strips it!
-                   DESC
-
-  s.homepage     = "http://EXAMPLE/GAI_Extentions"
+  s.homepage     = "https://github.com/peyoo/GAI_Extentions"
   # s.screenshots  = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
 
 
@@ -39,7 +30,7 @@ Pod::Spec.new do |s|
   #  Popular ones are 'MIT', 'BSD' and 'Apache License, Version 2.0'.
   #
 
-  s.license      = 'MIT (example)'
+  s.license      = 'MIT'
   # s.license      = { :type => 'MIT', :file => 'FILE_LICENSE' }
 
 
@@ -51,8 +42,6 @@ Pod::Spec.new do |s|
   #
 
   s.author       = { "peyoo" => "peyoo.zh@gmail.com" }
-  # s.authors      = { "peyoo" => "peyoo.zh@gmail.com", "other author" => "email@address.com" }
-  # s.author       = 'peyoo', 'other author'
 
 
   # ――― Platform Specifics ――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -61,12 +50,8 @@ Pod::Spec.new do |s|
   #  the deployment target. You can optionally include the target after the platform.
   #
 
-  # s.platform     = :ios
-  # s.platform     = :ios, '5.0'
-
-  #  When using multiple platforms
-  # s.ios.deployment_target = '5.0'
-  # s.osx.deployment_target = '10.7'
+  s.platform     = :ios
+  s.platform     = :ios, '5.0'
 
 
   # ――― Source Location ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -75,7 +60,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, svn and HTTP.
   #
 
-  s.source       = { :git => "http://EXAMPLE/GAI_Extentions.git", :tag => "0.0.1" }
+  s.source       = { :git => "https://github.com/peyoo/GAI_Extentions.git", :tag => "0.0.1" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -86,8 +71,7 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files  = 'Classes', 'Classes/**/*.{h,m}'
-  s.exclude_files = 'Classes/Exclude'
+  s.source_files  =  '*.{h,m}'
 
   # s.public_header_files = 'Classes/**/*.h'
 
@@ -125,9 +109,8 @@ Pod::Spec.new do |s|
   #  where they will only apply to your library. If you depend on other Podspecs
   #  you can include multiple dependencies to ensure it works.
 
-  # s.requires_arc = true
-
+  s.requires_arc = true
   # s.xcconfig = { 'HEADER_SEARCH_PATHS' => '$(SDKROOT)/usr/include/libxml2' }
-  # s.dependency 'JSONKit', '~> 1.4'
+  s.dependency 'GoogleAnalytics-iOS-SDK', '~> 3.0.2'
 
 end
