@@ -39,8 +39,19 @@
 +(void)trackEvent:(NSString*)category action:(NSString*)action label:(NSString*)label value:(NSNumber*)value{
     [[[GAI  sharedInstance] defaultTracker] send:[[GAIDictionaryBuilder createEventWithCategory:category                                                                                        action:action label:label value:value] build]];
 }
++(void)track:(NSString*)action error:(NSError*)error{
+    if (error) {
+        [self trackEvent:@"error" action:action label:error.localizedDescription value:0];
+    }
+}
 
++(void)trackEvent:(NSString*)category action:(NSString*)action label:(NSString*)label{
+    [self trackEvent:category action:action label:label value:0];
+}
 
++(void)trackEvent:(NSString*)category action:(NSString*)action{
+    [self trackEvent:category action:action label:nil value:0];
+}
 
 
 
