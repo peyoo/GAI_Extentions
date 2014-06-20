@@ -17,7 +17,7 @@
 +(void)trackError:(NSError*)error{
     if (error) {
         NSLog(@"error:%@",error);
-        [[[GAI sharedInstance] defaultTracker ] send:[[GAIDictionaryBuilder createExceptionWithDescription:error.userInfo[NSLocalizedDescriptionKey] withFatal:NO] build]];
+        [[[GAI sharedInstance] defaultTracker ] send:[[GAIDictionaryBuilder createExceptionWithDescription:[error description] withFatal:NO] build]];
     }
 
 }
@@ -41,7 +41,8 @@
 }
 +(void)track:(NSString*)action error:(NSError*)error{
     if (error) {
-        [self trackEvent:@"error" action:action label:error.localizedDescription value:0];
+        NSLog(@"error:%@",error);
+        [self trackEvent:@"error" action:action label:[error description] value:0];
     }
 }
 
